@@ -1,342 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Section</title>
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding-top: 60px; /* Space for sticky navbar */
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
 
-<style>
-  .about-section {
-    text-align: center;
-    padding: 50px 0;
-  }
-  .about-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  .about-section img {
-    width: 200px; /* Adjust the size as needed */
-    height: 200px;
-    border-radius: 50%; /* Makes the image round */
-    margin-bottom: 20px;
-  }
-  .about-section p {
-    color: #333;
-  }
+         
+        /* Navbar Styles */
+        .navbar {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow for better visibility */
+        }
+        body {
+            padding-top: 56px;
+        }
 
-  /* Additional CSS for Projects Section */
-.projects-section h2 {
-  margin-bottom: 40px;
-  font-size: 2.5rem;
-}
-.card {
-  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Adds a subtle shadow around the card */
-}
-.card-img-top {
-  max-height: 180px; /* Adjust this value to fit the image properly in the card */
-  object-fit: cover; /* This makes sure the image covers the area properly */
-}
-.card-body {
-  padding: 15px;
-}
-.card-title {
-  font-size: 1.25rem;
-}
-.card-text {
-  margin-bottom: 15px;
-}
+        .navbar-nav .nav-link {
+            color: #333; /* Dark color for text */
+        }
 
-/* Additional CSS for Skills Section */
-.skills-section h2 {
-  margin-bottom: 40px;
-  font-size: 2.5rem;
-}
-.skills-section .card {
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-.skills-section .card-img-top {
-  padding: 20px; /* Add padding around your images if needed */
-  background-color: #f8f9fa; /* Adjust the background color if your images have transparent areas */
-  height: 180px; /* Fixed height for consistency */
-  object-fit: contain; /* This will make sure the image is scaled properly within the container */
-}
-.skills-section .card-body {
-  padding: 15px;
-}
-.skills-section .card-title {
-  font-size: 1.25rem;
-  margin-bottom: 15px;
-}
-.skills-section .btn-outline-primary {
-  color: #007bff;
-  border-color: #007bff;
-}
-.skills-section .btn-outline-primary:hover {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-}
+        .navbar-nav .nav-link:hover {
+            color: #007bff; /* Change color on hover */
+        }
 
-/* Additional CSS for Contact Section */
-.contact-section {
-  padding: 50px 0;
-}
-.contact-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-}
-.contact-section p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-.social-icon {
-  width: 50px; /* Size of your icons */
-  margin-bottom: 10px;
-}
-/* Hover effect for icons */
-.social-icon:hover {
-  opacity: 0.7;
-}
-/* Style for links in the Contact section */
-.contact-section a {
-  color: #fff;
-  text-decoration: none; /* Removes underline from links */
-  display: inline-block; /* Allows for margin on the bottom */
-  margin-bottom: 10px;
-}
-.contact-section a:hover {
-  color: #ddd; /* Color when hovering over the link */
-}
+        .navbar-brand {
+            color: #333;
+            font-size: 24px;
+        }
 
-/* CSS for Sticky Navbar */
-.navbar {
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a shadow for depth */
-}
+        .navbar-brand:hover {
+            color: #007bff; /* Change color on hover */
+        }
 
-/* Ensure padding is added to body to avoid content being hidden behind the navbar */
-body { 
-  padding-top: 56px; /* Adjust this value based on the height of your navbar */
-}
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
+        /* Section Styles */
+        section {
+            padding: 10px 20px; /* Added padding to the sections */
+        }
+        /* Container with background color */
+        .main-content {
+            background-color: rgba(255, 255, 255, 0.9); /* Light transparent background color */
+            border-radius: 8px; /* Optional: rounded corners for a softer look */
+        }
+        /*  CSS for all the section */
+        .about-section {
+            text-align: center;
+        }
+        .about-section img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid #ddd;
+        }
+        .about-section p {
+            max-width: 600px;
+            margin: 10px auto;
+        }
+         /* Projects Section CSS */
+        .projects-section {
+            padding: 60px 20px;
+        }
+        .projects-section .card {
+            margin-bottom: 20px;
+        }
+         /* Skills Section CSS */
+        .skills-section {
+            padding: 60px 20px;
+        }
+        .skills-section .card {
+            margin-bottom: 20px;
+        }
+        .skills-section img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+         /* Contact Section CSS */
+        .contact-section {
+            background-color: #333;
+            color: white;
+            padding: 60px 20px;
+        }
+        .contact-section h2 {
+            margin-bottom: 40px;
+        }
+        .contact-section .contact-info {
+            margin-bottom: 30px;
+        }
+        .contact-section .contact-info i {
+            margin-right: 10px;
+        }
+        .contact-section .social-icons {
+            margin-top: 20px;
+        }
+        .contact-section .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        .contact-section .social-icons img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: pink;
+            padding: 10px;
+        }
+        .contact-section .social-icons img:hover {
+            background-color: #ff69b4;
+        }
+        .contact-section .social-icons .tooltip-inner {
+            white-space: nowrap;
+        }
+         
 
-/* Style for navigation bar links */
-.navbar-nav .nav-link {
-  color: white;
-}
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
 
-.navbar-nav .nav-link:hover {
-  color: #f8f9fa; /* Slightly lighter white when hovering over links */
-}
-
-/* Media query for responsive navbar collapsing */
-@media (max-width: 992px) {
-  .navbar-collapse {
-    background-color: #343a40; /* Same as navbar color for seamless look */
-  }
-}
-
-
-</style>
+    </style>
 
 </head>
 <body>
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">My Portfolio</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-<section id='about' class="about-section">
-  <div class="container">
-    <h2>About</h2>
-    <img src="images/about/1.jpg" alt="About Me">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet dolor dolor. Suspendisse ligula elit, hendrerit ut bibendum quis, facilisis vitae est. Vivamus vitae felis sit amet sem rhoncus euismod. Praesent commodo lorem porttitor. Nam in condimentum ex. Nam accumsan nisi turpis, sed tempus dolor volutpat non. Proin id enim feugiat ipsum consectetur mattis. Nam blandit venenatis nisi, convallis imperdiet nisi condimentum at.</p>
-    <p>Duis convallis ligula sed pretium tristique. Duis nunc risus, lacinia eget cursus id, suscipit ac metus. Sed varius sed tortor congue aliquam. In in dapibus diam, in auctor purus. Praesent vitae tristique diam. Donec tincidunt hendrerit tortor, vitae lobortis purus rutrum sit amet. Nunc non arcu vitae leo rhoncus tincidunt vel sed urna. Sed sed efficitur dui. Morbi id velit nisi. Fusce luctus placerat purus eu cursus.</p>
-  </div>
+
+
+        <!-- About Section -->
+        <section id='about' class="about-section" id="about">
+            <h2>About</h2>
+            <img src="images/about/me.jpg" alt="Profile Picture">
+            <p>Hello, I'm Christian Rim, a data-driven professional with a solid foundation in Business Analytics and experience across various industries. With a Bachelor's degree in Business Analytics and extensive training from Coding Dojo, I specialize in data analysis, visualization, and machine learning.</p>
+            <p>I excel in transforming data into actionable insights using tools like Python, SQL, and Data Viz. My background includes roles in research, operations, and recruitment, where I've honed my skills in data-driven decision-making and stakeholder communication. Passionate about leveraging data to solve real-world problems, I am dedicated to continuous learning and professional growth.</p>
+            <p>Explore my projects I have researched and displayed to see how I can contribute to your next data-driven initiative. </p>
 </section>
 
+        <!-- Projects Section -->
+        <section id='projects' class="projects-section" id="projects">
+            <h2 class="text-center">Projects</h2>
+            <div class="row">
+                <!-- Project 1 Card -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/projects/k-food.jpg" class="card-img-top" alt="Project 1">
+                        <div class= "card-body">
+                            <h5 class="card-title">Exploring Korean Restaurants in LA</h5>
+                            <p class="card-text">I have used Yelp's API to map out all of the Korean restaurants in the LA Area.</p>
+                            <a href="#" class="btn btn-primary">Blog Post</a>
+                            <a href="https://github.com/rimchristian/Yelp-API" class="btn btn-secondary">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 Card -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/projects/2.jpg" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 2</h5>
+                            <p class="card-text">Curabitur vel neque nec nulla varius consectetur ac eget justo. Vivamus suscipit pharetra dui, at aliquet lacus.</p>
+                            <a href="#" class="btn btn-primary">Blog Post</a>
+                            <a href="#" class="btn btn-secondary">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 Card -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="images/projects/3.jpg" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 3</h5>
+                            <p class="card-text">Nullam facilisis, arcu vel sodales facilisis, justo mauris interdum justo, sit amet luctus magna nulla eu nulla.</p>
+                            <a href="#" class="btn btn-primary">Blog Post</a>
+                            <a href="#" class="btn btn-secondary">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Projects Section -->
-<section id="projects" class="projects-section bg-light" id="projects">
-  <div class="container">
-    <h2 class="text-center">Projects</h2>
-    <div class="row">
-      <!-- Project 1 -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="images/projects/1.jpg" class="card-img-top" alt="Project 1">
-          <div class="card-body">
-            <h5 class="card-title">Project 1</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
-            <a href="#" class="btn btn-primary">Blog Post</a>
-            <a href="#" class="btn btn-secondary">Source Code</a>
-          </div>
+         <!-- Skills Section -->
+        <section id='skills' class="skills-section" id="skills">
+            <h2 class="text-center">Skills</h2>
+            <div class="row">
+
+                <!-- Skill 1 Card -->
+                <div class="col-md-3">
+                    <div class="card text-center">
+                        <img src="images/skills/1.png" class="card-img-top mx-auto" alt="Skill 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Python</h5>
+                            <p class="card-text">Proficient in Python, with experience gained through college courses and ongoing online learning. Skilled in data analysis, visualization, and automation using Python libraries such as pandas, matplotlib, and scikit-learn.</p>
+                            <a href="#" class="btn btn-primary">Link to course or bootcamp</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill 2 Card -->
+                <div class="col-md-3">
+                    <div class="card text-center">
+                        <img src="images/skills/2.png" class="card-img-top mx-auto" alt="Skill 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Visualization</h5>
+                            <p class="card-text">Experienced in creating compelling visualizations to communicate data insights. Proficient in tools such as Matplotlib and Seaborn for Python-based visualizations, and Tableau and Power BI for interactive and dynamic dashboards.</p>
+                            <a href="#" class="btn btn-primary">Link to course or bootcamp</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill 3 Card -->
+                <div class="col-md-3">
+                    <div class="card text-center">
+                        <img src="images/skills/3.png" class="card-img-top mx-auto" alt="Skill 3">
+                        <div class="card-body">
+                            <h5 class="card-title">SQL</h5>
+                            <p class="card-text">Developed SQL skills during my time at Coding Dojo, including database design, querying, and data manipulation. Experienced in writing queries, and working with relational databases like MySQL</p>
+                            <a href="https://www.codecademy.com/profiles/christianRim4561085952/certificates/042a4e5884e3eb6ea1f2a12be6abb851" class="btn btn-primary">Link to course or bootcamp</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill 4 Card -->
+                <div class="col-md-3">
+                    <div class="card text-center">
+                        <img src="images/skills/5.png" class="card-img-top mx-auto" alt="Skill 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Microsoft Excel</h5>
+                            <p class="card-text">Experienced in managing large datasets, calculating metrics, creating pivot tables, and performing complex lookups to derive actionable insights.</p>
+                            <a href="#" class="btn btn-primary">Link to course or bootcamp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id='contact' class="contact-section" id="contact">
+            <h2 class="text-center">Contact Me</h2>
+            <div class="row contact-info text-center">
+                <div class="col-md-6">
+                    <i class="fas fa-envelope"></i> <a href="mailto:Christian.j.rim@gmail.com" class="text-white">Christian.j.rim@gmail.com</a>
+                </div>
+                <div class="col-md-6">
+                    <i class="fas fa-phone"></i> <a href="tel:+1234567890" class="text-white">+1 (415) 290-8855</a>
+                    <i class="fas fa-phone"></i> <a href="tel:+1234567890" class="text-white">+82 010-4336-2733</a>
+                </div>
+            </div>
+            <div class="row social-icons justify-content-center">
+                <a href="https://www.linkedin.com/in/christianrim" target="_blank" class="mx-2" data-toggle="tooltip" data-placement="top" title="LinkedIn">
+                    <img src="icons/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/rimchristian" target="_blank" class="mx-2" data-toggle="tooltip" data-placement="top" title="Github">
+                    <img src="icons/github.png" alt="github">
         </div>
-      </div>
-      <!-- Project 2 -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="images/projects/2.jpg" class="card-img-top" alt="Project 2">
-          <div class="card-body">
-            <h5 class="card-title">Project 2</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
-            <a href="#" class="btn btn-primary">Blog Post</a>
-            <a href="#" class="btn btn-secondary">Source Code</a>
-          </div>
-        </div>
-      </div>
-      <!-- Project 3 -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="images/projects/3.jpg" class="card-img-top" alt="Project 3">
-          <div class="card-body">
-            <h5 class="card-title">Project 3</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
-            <a href="#" class="btn btn-primary">Blog Post</a>
-            <a href="#" class="btn btn-secondary">Source Code</a>
-          </div>
-        </div>
-      </div>
     </div>
+ </section>
 
-  </div>
-</section>
-
-
-<!-- Skills Section -->
-<section id="skills" class="skills-section bg-white" id="skills">
-  <div class="container">
-    <h2 class="text-center">Skills</h2>
-    <div class="row">
-      <!-- Skill 1 -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card">
-          <img src="images/skills/1.png" class="card-img-top" alt="Python">
-          <div class="card-body">
-            <h5 class="card-title">Python</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
-            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>
-          </div>
-        </div>
-      </div>
-      <!-- Skill 2 -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card">
-          <img src="images/skills/2.png" class="card-img-top" alt="Data Visualization">
-          <div class="card-body">
-            <h5 class="card-title">Data Visualization</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
-            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>
-          </div>
-        </div>
-      </div>
-      <!-- Skill 3 -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card">
-          <img src="images/skills/3.png" class="card-img-top" alt="SQL">
-          <div class="card-body">
-            <h5 class="card-title">SQL</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
-            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>
-          </div>
-        </div>
-      </div>
-      <!-- Skill 4 -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card">
-          <img src="images/skills/4.png" class="card-img-top" alt="Data Storytelling">
-          <div class="card-body">
-            <h5 class="card-title">Data Storytelling</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
-            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Me Section -->
-<section id="contact" class="contact-section text-center text-white bg-dark">
-  <div class="container">
-    <h2>Contact Me</h2>
-    <div class="row">
-      <div class="col-lg-6">
-        <p><i class="fas fa-envelope"></i> loremipsum@gmail.com</p>
-      </div>
-      <div class="col-lg-6">
-        <p><i class="fas fa-phone"></i> 415xxxxxxx</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-2 col-md-4 mb-4">
-        <a href="https://linkedin.com/in/yourusername" target="_blank">
-          <img src="icons/linkedin.png" alt="LinkedIn" class="social-icon">
-          LinkedIn
-        </a>
-      </div>
-      <div class="col-lg-2 col-md-4 mb-4">
-        <a href="https://twitter.com/yourusername" target="_blank">
-          <img src="icons/twitter.png" alt="Twitter" class="social-icon">
-          Twitter
-        </a>
-      </div>
-      <div class="col-lg-2 col-md-4 mb-4">
-        <a href="https://github.com/yourusername" target="_blank">
-          <img src="icons/github.png" alt="GitHub" class="social-icon">
-          GitHub
-        </a>
-      </div>
-      <div class="col-lg-2 col-md-4 mb-4">
-        <a href="https://medium.com/@yourusername" target="_blank">
-          <img src="icons/medium.png" alt="Medium" class="social-icon">
-          Medium
-        </a>
-      </div>
-      <div class="col-lg-2 col-md-4 mb-4">
-        <a href="https://youtube.com/c/yourchannel" target="_blank">
-          <img src="icons/youtube.png" alt="YouTube" class="social-icon">
-          YouTube
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Sticky Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#home">Portfolio</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-<!-- Bootstrap JS and dependencies (jQuery and Popper) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
